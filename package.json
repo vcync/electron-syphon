@@ -1,0 +1,29 @@
+{
+  "name": "electron-spout-syphon",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "postinstall": "npx node-gyp clean && npx node-gyp configure && npx node-gyp rebuild",
+    "start": "electron src/main.js"
+  },
+  "dependencies": {
+    "complementary-colors": "^1.0.6",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "nan": "^2.22.1",
+    "node-addon-api": "^8.3.1"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "mac": {
+      "extraResource": [
+        {
+          "from": "/Library/Frameworks/Syphon.framework",
+          "to": "Contents/Frameworks/Syphon.framework"
+        }
+      ],
+      "target": [
+        "dmg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+cmd_Release/syphon.node := c++ -bundle -framework OpenGL -framework AppKit -framework Cocoa -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.15 -arch arm64 -L./Release -stdlib=libc++  -o Release/syphon.node Release/obj.target/syphon/native/syphon/syphon.o /Library/Frameworks/Syphon.framework/Syphon
