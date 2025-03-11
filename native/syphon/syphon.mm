@@ -29,7 +29,7 @@ void InitSyphon() {
   // Setup CAMetalLayer for rendering
   metalLayer = [CAMetalLayer layer];
   metalLayer.device = metalDevice;
-  metalLayer.pixelFormat = MTLPixelFormatBGRA8Unorm;
+  metalLayer.pixelFormat = MTLPixelFormatRGBA8Unorm;
   metalLayer.maximumDrawableCount = 2;
   metalLayer.contentsScale = [NSScreen mainScreen].backingScaleFactor;
 
@@ -87,7 +87,7 @@ void PublishSyphonFrame(const Napi::CallbackInfo &info) {
 
     MTLTextureDescriptor *textureDescriptor =
         [[MTLTextureDescriptor alloc] init];
-    textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
+    textureDescriptor.pixelFormat = MTLPixelFormatRGBA8Unorm;
     textureDescriptor.width = width;
     textureDescriptor.height = height;
     textureDescriptor.usage =

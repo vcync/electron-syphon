@@ -15,6 +15,7 @@
 
 # node.js
 node_modules
+build
 
 # Electron
 dist
